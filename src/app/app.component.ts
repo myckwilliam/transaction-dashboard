@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TransactionsService } from './home/data-access/services/transactions.service';
 
 @Component({
   selector: 'app-root',

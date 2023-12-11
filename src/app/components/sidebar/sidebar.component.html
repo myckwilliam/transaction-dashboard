@@ -1,1 +1,29 @@
-<p>sidebar works!</p>
+<aside
+  class="flex flex-column align-items-center justify-content-between border-round-3xl py-6 bg-white w-16rem mr-5"
+  style="height: 95vh; color: #017ceb"
+>
+  <div class="flex flex-column align-items-center font-bold">
+    <h1 class="text-xl mb-6">
+      <span class="pi pi-chart-pie mr-1"></span> Dashboard
+    </h1>
+
+    <ul class="font-semibold">
+      <li class="mb-4">
+        <a routerLink="/" routerLinkActive="active-link"
+          ><span class="pi pi-file mr-2"></span> Resumo</a
+        >
+      </li>
+      <li class="mb-4">
+        <a routerLink="/graficos" routerLinkActive="active-link">
+          <span class="pi pi-chart-bar mr-2"></span> Gráficos</a
+        >
+      </li>
+      <li>
+        <a routerLink="/transacoes" routerLinkActive="active-link"
+          ><span class="pi pi-list mr-2"></span> Transações</a
+        >
+      </li>
+    </ul>
+  </div>
+  <img src="assets/generic-logo.png" alt="logo" style="max-width: 200px" />
+</aside>

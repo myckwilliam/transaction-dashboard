@@ -9,12 +9,21 @@ import { shareReplay } from 'rxjs/operators';
 })
 export class TransactionsService {
   private baseURL = '/api';
+  private transactions$: Observable<TransactionData> | null = null;
 
   constructor(private http: HttpClient) {}
 
   getTransactions(): Observable<TransactionData> {
     const endpoint = `${this.baseURL}/transactions`;
 
-    return this.http.get<TransactionData>(endpoint).pipe(shareReplay(1));
+    if (this.transactions$) {
+      return this.transactions$;
+    }
+
+    this.transactions$ = this.http
+      .get<TransactionData>(endpoint)
+      .pipe(shareReplay(1));
+
+    return this.transactions$;
   }
 }

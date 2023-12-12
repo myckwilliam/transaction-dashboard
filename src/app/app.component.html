@@ -1,4 +1,4 @@
 <div class="flex" style="padding: 2.5vh">
-  <app-sidebar></app-sidebar>
+  <app-sidebar *ngIf="isDesktop$ | async"></app-sidebar>
   <router-outlet></router-outlet>
 </div>

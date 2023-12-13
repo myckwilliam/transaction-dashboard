@@ -9,10 +9,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   isDesktop$!: Observable<boolean>;
+  isTablet$!: Observable<boolean>;
 
   constructor(private mediaQueryService: MediaQueryService) {}
 
   ngOnInit(): void {
     this.isDesktop$ = this.mediaQueryService.isDesktop$;
+    this.isTablet$ = this.mediaQueryService.isTablet$;
   }
 }

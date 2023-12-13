@@ -1,4 +1,17 @@
-<div class="flex" style="padding: 2.5vh">
-  <app-sidebar *ngIf="isDesktop$ | async"></app-sidebar>
-  <router-outlet></router-outlet>
+<div *ngIf="{ isDesktop: isDesktop$ | async } as state">
+  <div
+    class="bg-white flex align-items-center p-4 w-100 h-3rem mx-4 mt-4 border-round-xl align-self-center"
+    *ngIf="!state.isDesktop"
+  >
+    <button pButton>
+      <span
+        aria-label="Mostrar menu."
+        class="pi pi-bars text-xl cursor-pointer"
+      ></span>
+    </button>
+  </div>
+  <div class="flex p-4">
+    <app-sidebar *ngIf="state.isDesktop"></app-sidebar>
+    <router-outlet></router-outlet>
+  </div>
 </div>

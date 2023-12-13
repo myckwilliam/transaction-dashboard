@@ -1,5 +1,3 @@
-@import "primeicons/primeicons.css";
-
 html,
 body,
 div,
@@ -127,6 +125,7 @@ table {
 
 body {
   background-color: #017ceb;
+  color: #017ceb;
 }
 
 * {

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TransactionData } from 'src/app/models/transaction.data';
 import { shareReplay } from 'rxjs/operators';
+import { TransactionData } from 'src/app/models';
 
 @Injectable({
   providedIn: 'root',

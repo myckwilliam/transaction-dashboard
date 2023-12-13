@@ -1,2 +1,2 @@
-export * from './data-access/media-query.service';
-export * from './data-access/transactions.service';
+export * from './services/media-query.service';
+export * from './services/transactions.service';

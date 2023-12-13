@@ -1,6 +1,6 @@
 import { MediaQueryService } from 'src/app/shared';
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',

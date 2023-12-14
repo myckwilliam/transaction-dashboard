@@ -12,7 +12,12 @@ import { MobileNavbarComponent } from './components/mobile-navbar/mobile-navbar.
 import { SidebarContentComponent } from './components/sidebar-content/sidebar-content.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, MobileNavbarComponent, SidebarContentComponent],
+  declarations: [
+    AppComponent,
+    SidebarComponent,
+    MobileNavbarComponent,
+    SidebarContentComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

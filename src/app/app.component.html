@@ -3,8 +3,8 @@
     <app-mobile-navbar></app-mobile-navbar>
   </div>
   <div class="flex p-4">
-    <app-sidebar *ngIf="state.isDesktop"></app-sidebar>
-    <div style="flex-grow: 1">
+    <app-sidebar class="fixed" *ngIf="state.isDesktop"></app-sidebar>
+    <div class="main-content">
       <router-outlet></router-outlet>
     </div>
   </div>

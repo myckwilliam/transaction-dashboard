@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ResumoComponent } from './feature/resumo.component';
+import { ResumoComponent } from './resumo.component';
 
 const routes: Routes = [{ path: '', component: ResumoComponent }];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { generatePastelColors } from 'src/app/shared';
 
 @Component({
   selector: 'app-donut-chart',
@@ -18,8 +19,7 @@ export class DonutChartComponent implements OnInit {
       datasets: [
         {
           data: [300, 50, 100],
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+          backgroundColor: generatePastelColors(3),
         },
       ],
     };

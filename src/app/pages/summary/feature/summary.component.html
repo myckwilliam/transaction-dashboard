@@ -1,6 +1,6 @@
 <div *ngIf="transactions$ | async as transactionData">
   <div class="flex justify-content-between text-white text-xl font-bold">
-    <h2>Resumo</h2>
+    <h2>Resumo das Transações</h2>
     <p>{{ transactionData.summary.initialDate | date : "dd/MM/yyyy" }}</p>
   </div>
   <hr />
@@ -8,6 +8,6 @@
     <app-total-cards [summary]="summary"></app-total-cards>
   </section>
   <section *ngIf="transactionData.items as transactions">
-    <app-charts></app-charts>
+    <app-charts [transactions]="transactions"></app-charts>
   </section>
 </div>

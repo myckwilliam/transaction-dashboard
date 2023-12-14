@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { SummaryComponent } from './feature/summary.component';
 import { SummaryRoutingModule } from './summary-routing.module';
 import { SharedModule } from 'src/app/shared';
-import { TotalCardsComponent } from './feature/components/total-cards/total-cards.component';
+import { TotalCardsComponent } from './components/total-cards/total-cards.component';
 import { ChartModule } from 'primeng/chart';
-import { DonutChartComponent } from './feature/components/donut-chart/donut-chart.component';
-import { ChartsComponent } from './feature/components/charts/charts.component';
+import { DonutChartComponent } from './components/donut-chart/donut-chart.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { ChartsComponent } from './feature/components/charts/charts.component';
     TotalCardsComponent,
     DonutChartComponent,
     ChartsComponent,
+    PieChartComponent,
+    BarChartComponent,
   ],
   imports: [CommonModule, SummaryRoutingModule, SharedModule, ChartModule],
 })

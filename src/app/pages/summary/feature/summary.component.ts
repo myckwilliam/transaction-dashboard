@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { TransactionData, TransactionSummary } from 'src/app/models';
+import { TransactionsService } from 'src/app/shared';
 
 @Component({
   selector: 'app-summary',
@@ -6,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./summary.component.css'],
 })
 export class SummaryComponent implements OnInit {
-  constructor() {}
+  transactions$!: Observable<TransactionData>;
 
-  ngOnInit(): void {}
+  constructor(private transactionsService: TransactionsService) {}
+
+  ngOnInit(): void {
+    this.transactions$ = this.transactionsService.getTransactions();
+  }
 }

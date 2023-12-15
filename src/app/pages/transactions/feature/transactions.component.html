@@ -1,0 +1,18 @@
+<div *ngIf="transactions$ | async as transactionData">
+  <div class="flex justify-content-between text-white text-xl font-bold">
+    <h2>Tabela de Transações</h2>
+    <p>{{ transactionData.summary.initialDate | date : "dd/MM/yyyy" }}</p>
+  </div>
+  <hr />
+
+  <section
+    class="flex col flex-column p-0"
+    *ngIf="transactionData.items as transactions"
+  >
+    <app-card class="col w-full">
+      <app-transactions-table
+        [transactions]="transactions"
+      ></app-transactions-table>
+    </app-card>
+  </section>
+</div>

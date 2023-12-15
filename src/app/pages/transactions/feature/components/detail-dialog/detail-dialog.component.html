@@ -1,0 +1,74 @@
+<div>
+  <p class="flex justify-content-between mb-4">
+    <strong>Id:</strong> {{ transaction.id }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Id do Mercador:</strong> {{ transaction.merchantId }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Nó de Pagamento:</strong> {{ transaction.paymentNode }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Raíz do CNPJ:</strong> {{ transaction.cnpjRoot }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Data:</strong> {{ transaction.date | date : "dd/MM/yyyy" }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Forma de Pagamento:</strong> {{ transaction.paymentType }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Bandeira do Cartão:</strong> {{ transaction.cardBrand }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Código de Autorização:</strong> {{ transaction.authorizationCode }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Número Truncado do Cartão:</strong>
+    {{ transaction.truncatedCardNumber }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Valor Bruto:</strong>
+    {{ transaction.grossAmount }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Valor Líquido:</strong>
+    {{ transaction.netAmount }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Terminal:</strong>
+    {{ transaction.terminal }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Taxa de Administração:</strong>
+    {{ transaction.administrationFee }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Código do Canal:</strong>
+    {{ transaction.channelCode }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Canal:</strong>
+    {{ transaction.channel }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Valor de Retirada:</strong>
+    {{ transaction.withdrawAmount }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Valor Mínimo de MDR:</strong>
+    {{ transaction.minimumMDRAmmount }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Valor do Imposto de MDR:</strong>
+    {{ transaction.mdrTaxAmount }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Valor da Taxa de MDR:</strong>
+    {{ transaction.mdrFeeAmount }}
+  </p>
+  <p class="flex justify-content-between mb-4">
+    <strong>Status:</strong>
+    {{ transaction.status }}
+  </p>
+</div>

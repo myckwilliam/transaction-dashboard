@@ -58,6 +58,20 @@ Essa tela:
 
 ![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/340658b1-8760-4656-a023-67d951011cb6)
 ![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/5ab6180f-e1d2-499f-bfa6-b69a22740d41)
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/3a4767b1-9c2a-4a2b-ac1d-889b2d3ee479)
+
+## Sidebar
+
+Esse componente:
+
+* Aparece de duas formas difentes
+* Uma é a padrão, fixamente lateral
+* A outra é mais responsiva, pois tem um auxiliar que fica no topo da página em forma de navmenu que, ao ter o botão de barras clicado, mostra a sidebar que conhecemos em forma de modal.
+
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/6fb67ac0-4e70-424f-bab5-964f50fdb231)
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/12198c60-92b8-4cf9-ad47-4881b20658ff)
+
+
 
 
 

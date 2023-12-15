@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DonutChartComponent } from './donut-chart.component';
 import { Component } from '@angular/core';
 import { Transaction } from 'src/app/models';
+import { ChartModule } from 'primeng/chart';
 
 @Component({
   template: `<app-donut-chart
@@ -86,6 +87,7 @@ describe('DonutChartComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [ChartModule],
       declarations: [DonutChartComponent, TestHostComponent],
     });
 

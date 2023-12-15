@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BarChartComponent } from './bar-chart.component';
 import { Component } from '@angular/core';
 import { Transaction } from 'src/app/models/transaction'; // Substitua pelo caminho real do seu modelo
+import { ChartModule } from 'primeng/chart';
 
 @Component({
   template: `<app-bar-chart [transactions]="testTransactions"></app-bar-chart>`,
@@ -83,6 +84,7 @@ describe('BarChartComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [ChartModule],
       declarations: [BarChartComponent, TestHostComponent],
     });
 

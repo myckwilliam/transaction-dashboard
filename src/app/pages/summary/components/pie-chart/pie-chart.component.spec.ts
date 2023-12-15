@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PieChartComponent } from './pie-chart.component';
 import { Component } from '@angular/core';
 import { Transaction } from 'src/app/models';
+import { ChartModule } from 'primeng/chart';
 
 @Component({
   template: `<app-pie-chart [transactions]="testTransactions"></app-pie-chart>`,
@@ -83,6 +84,7 @@ describe('PieChartComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [ChartModule],
       declarations: [PieChartComponent, TestHostComponent],
     });
 

@@ -11,7 +11,12 @@
     <span class="pi pi-bars text-xl"></span>
   </button>
   <h1 class="text-xl secondary-color font-bold">
-    <span class="pi pi-chart-pie mr-1"></span> Dashboard
+    <a
+      routerLink="/"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active-link "
+      ><span class="pi pi-chart-pie mr-1"></span>Dashboard</a
+    >
   </h1>
 </div>
 <p-sidebar

@@ -89,6 +89,9 @@ Usei uma estrutura que acho bem escalável, ela consiste em:
 * A pasta pages possui uma pasta pra cada página e seus respectivos componentes auxiliares
 * Cada página contém um módulo principal e um de rotas. Essa estratégia de dividir páginas por módulos facilita bastante na hora de rotear com lazy loading.
 
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/0eec8c76-12b2-4e60-8f4b-c39b4153ca55)
+
+
 
 
 

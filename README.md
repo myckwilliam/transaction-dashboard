@@ -71,6 +71,12 @@ Esse componente:
 ![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/6fb67ac0-4e70-424f-bab5-964f50fdb231)
 ![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/12198c60-92b8-4cf9-ad47-4881b20658ff)
 
+## Serviços
+
+A aplicação tem dois serviços
+
+* O serviço de media query usa o matchMedia do objeto `window` para gerar Observables de Media Query. É usado para alternar o menu entre desktop e mobile/tablet.
+* O serviço de transações é o coração da aplicação. Ele faz uma requisição à porta 3000 (onde o JSON está servido) e cacheia, pois os dados não vão mudar e evita fazer multiplas requisições sem necessidade.
 
 
 

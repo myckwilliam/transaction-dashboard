@@ -36,6 +36,7 @@ Esse comando vai servir o angular com uma configuração de proxy para prevenir 
 Essa tela:
 
 * Mostra o resumo das transações como Valor Total e Quantidade de Transações
+* É totalmente responsiva
 * Mostra insights gráficos das transações com oa principal forma de pagamento e a bandeira de cartão de crédito mais usada
 * Os gráficos são meramente estatísticos já que possuo uma pequena parte dos dados
 * Os items para a plotagem dos gráficos foram obtidos a partir de mapeamento automático das transações
@@ -43,6 +44,24 @@ Essa tela:
 * Sempre que a tela de resumo é renderizada, há uma nova geração das cores. É interessante ver as cores mudando, lembra o site do [Composer](https://getcomposer.org/)
 
 ![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/1ea63d70-e886-4f65-9463-8b7c98039571)
+
+## Tela de Transações
+
+Essa tela:
+
+* Mostra uma tabela que contém todas as transações disponíveis
+* É possível reordenar todas as colunas
+* Possui diferentes tags para diferentes status
+* Apresenta as bandeiras dos cartões de crédito pela sua logo
+* Em cada item é possível clicar no botão de detalhes que abre um modal com todas as informações das transações
+* A tabela fica em formato de pilha quando a tela é pequena, garantindo responsividade
+
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/340658b1-8760-4656-a023-67d951011cb6)
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/5ab6180f-e1d2-499f-bfa6-b69a22740d41)
+
+
+
+
 
 
 

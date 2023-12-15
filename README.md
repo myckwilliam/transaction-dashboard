@@ -78,7 +78,15 @@ A aplicação tem dois serviços
 * O serviço de media query usa o matchMedia do objeto `window` para gerar Observables de Media Query. É usado para alternar o menu entre desktop e mobile/tablet.
 * O serviço de transações é o coração da aplicação. Ele faz uma requisição à porta 3000 (onde o JSON está servido) e cacheia, pois os dados não vão mudar e evita fazer multiplas requisições sem necessidade.
 
+## Estrutura de Pastas
 
+Usei uma estrutura que acho bem escalável, ela consiste em:
+
+* Pasta principal contém o `AppComponent` e seus componentes auxiliares, além da pasta shared, pages e models
+* A pasta shared contém componentes, utils e services que serão compartilhados em toda a aplicação, ela tem seu próprio módulo
+* A pasta models contém os tipos e interfaces da aplicação
+* A pasta pages possui uma pasta pra cada página e seus respectivos componentes auxiliares
+* Cada página contém um módulo principal e um de rotas. Essa estratégia de dividir páginas por módulos facilita bastante na hora de rotear com lazy loading.
 
 
 

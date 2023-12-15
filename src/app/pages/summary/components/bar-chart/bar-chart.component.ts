@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MediaQueryService } from 'src/app/shared';
+import { Component, Input, OnInit } from '@angular/core';
+import { ChartData, PaymentMap, Transaction } from 'src/app/models';
+import { MediaQueryService, generatePastelColor } from 'src/app/shared';
 
 @Component({
   selector: 'app-bar-chart',
@@ -7,62 +8,41 @@ import { MediaQueryService } from 'src/app/shared';
   styleUrls: ['./bar-chart.component.css'],
 })
 export class BarChartComponent implements OnInit {
-  basicData: any;
+  @Input() transactions!: Transaction[];
 
-  basicOptions: any;
+  data!: ChartData;
 
   ngOnInit() {
-    this.basicData = {
-      labels: ['January'],
-      datasets: [
-        {
-          label: 'My First dataset',
-          backgroundColor: '#42A5F5',
-          data: [10],
-        },
-        {
-          label: 'My Second dataset',
-          backgroundColor: '#f00',
-          data: [65],
-        },
-        {
-          label: 'My Third dataset',
-          backgroundColor: '#0f0',
-          data: [40],
-        },
-        {
-          label: 'My Forth dataset',
-          backgroundColor: '#00f',
-          data: [90],
-        },
-      ],
+    const brandAmountMap = this.mapBrandAmount(this.transactions);
+    const totalAmount = this.getTotalAmount(this.transactions);
+
+    this.data = {
+      labels: [''],
+      datasets: Object.keys(brandAmountMap).map((brand) => {
+        return {
+          label: brand,
+          backgroundColor: generatePastelColor(),
+          data: [(brandAmountMap[brand] / totalAmount) * 100],
+        };
+      }),
     };
-    this.basicOptions = {
-      plugins: {
-        legend: {
-          labels: {
-            color: '#495057',
-          },
-        },
-      },
-      scales: {
-        x: {
-          ticks: {
-            color: '#495057',
-          },
-          grid: {
-            color: '#ebedef',
-          },
-        },
-        y: {
-          ticks: {
-            color: '#495057',
-          },
-          grid: {
-            color: '#ebedef',
-          },
-        },
-      },
-    };
+  }
+
+  private mapBrandAmount(items: Transaction[]): PaymentMap {
+    const cardBrandMap: PaymentMap = {};
+
+    for (const item of items) {
+      const cardBrand = item.cardBrand;
+      if (cardBrandMap[cardBrand]) {
+        cardBrandMap[cardBrand] += item.grossAmount;
+      } else {
+        cardBrandMap[cardBrand] = item.grossAmount;
+      }
+    }
+    return cardBrandMap;
+  }
+
+  private getTotalAmount(transactions: Transaction[]) {
+    return transactions.reduce((acc, current) => acc + current.grossAmount, 0);
   }
 }

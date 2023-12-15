@@ -8,7 +8,7 @@
   <app-card class="md:col-6 col">
     <h3 class="font-bold text-lg mb-4">Distribuição por Bandeira:</h3>
     <div class="flex justify-content-center">
-      <app-donut-chart></app-donut-chart>
+      <app-donut-chart [transactions]="transactions"></app-donut-chart>
     </div>
   </app-card>
 </div>
@@ -16,7 +16,7 @@
   <app-card class="col w-full">
     <h3 class="font-bold text-lg mb-4">Valor Total por Bandeira:</h3>
     <div class="flex justify-content-center">
-      <app-bar-chart></app-bar-chart>
+      <app-bar-chart [transactions]="transactions"></app-bar-chart>
     </div>
   </app-card>
 </div>

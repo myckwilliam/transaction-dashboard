@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ChartData, PaymentTypeMap, Transaction } from 'src/app/models';
+import { ChartData, PaymentMap, Transaction } from 'src/app/models';
 import { generatePastelColors } from 'src/app/shared';
 
 @Component({
@@ -12,25 +12,25 @@ export class PieChartComponent implements OnInit {
 
   data!: ChartData;
 
-  chartOptions: any;
-
   ngOnInit() {
-    const paymenMap = this.mapPaymentFrequency(this.transactions);
-    const mapLength = Object.keys(paymenMap).length;
+    const paymentMap = this.mapPaymentFrequency(this.transactions);
+    const mapLength = Object.keys(paymentMap).length;
 
     this.data = {
-      labels: Object.keys(paymenMap),
+      labels: Object.keys(paymentMap),
       datasets: [
         {
-          data: Object.values(paymenMap).map((value) => value / mapLength),
+          data: Object.values(paymentMap).map(
+            (value) => (value / this.transactions.length) * 100
+          ),
           backgroundColor: generatePastelColors(mapLength),
         },
       ],
     };
   }
 
-  private mapPaymentFrequency(items: Transaction[]): PaymentTypeMap {
-    const paymentMap: PaymentTypeMap = {};
+  private mapPaymentFrequency(items: Transaction[]): PaymentMap {
+    const paymentMap: PaymentMap = {};
 
     for (const item of items) {
       const paymentType = item.paymentType;

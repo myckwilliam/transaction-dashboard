@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ChartData, PaymentMap, Transaction } from 'src/app/models';
 import { generatePastelColors } from 'src/app/shared';
 
 @Component({
@@ -7,21 +8,39 @@ import { generatePastelColors } from 'src/app/shared';
   styleUrls: ['./donut-chart.component.css'],
 })
 export class DonutChartComponent implements OnInit {
-  data: any;
+  @Input() transactions!: Transaction[];
 
-  chartOptions: any;
-
-  constructor() {}
+  data!: ChartData;
 
   ngOnInit() {
+    const cardBrandMap = this.mapCardBrand(this.transactions);
+    const brandLength = Object.keys(cardBrandMap).length;
+
     this.data = {
-      labels: ['A', 'B', 'C'],
+      labels: Object.keys(cardBrandMap),
       datasets: [
         {
-          data: [300, 50, 100],
-          backgroundColor: generatePastelColors(3),
+          data: Object.values(cardBrandMap).map(
+            (value: number) => (value / this.transactions.length) * 100
+          ),
+          backgroundColor: generatePastelColors(brandLength),
         },
       ],
     };
+  }
+
+  private mapCardBrand(items: Transaction[]): PaymentMap {
+    const cardBrandMap: PaymentMap = {};
+
+    for (const item of items) {
+      const cardBrand = item.cardBrand;
+
+      if (cardBrandMap[cardBrand]) {
+        cardBrandMap[cardBrand]++;
+      } else {
+        cardBrandMap[cardBrand] = 1;
+      }
+    }
+    return cardBrandMap;
   }
 }

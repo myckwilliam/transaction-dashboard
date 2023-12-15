@@ -16,11 +16,11 @@ Procurei usar em todo o projeto as melhores práticas em Angular quem venho estu
 
 Esse comando vai instalar o JSON server na sua máquina e vai servir o arquivo `db.json` localmente na porta 3000, gerando uma api fake que é usada pela aplicação como fonte de dados
 
-5. Em outra aba do terminal rode `npm start`
+6. Em outra aba do terminal rode `npm start`
 
 Esse comando vai servir o angular com uma configuração de proxy para prevenir erros de Cross-Origin Resource Sharing (CORS)
 
-6. Agora e só acessar o link http://localhost:4200/
+7. Agora e só acessar o link http://localhost:4200/
 
 ## Como Testar
 

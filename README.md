@@ -21,6 +21,33 @@ Esse comando vai servir o angular com uma configuração de proxy para prevenir 
 
 6. Agora e só acessar o link http://localhost:4200/
 
+## Como Testar
+
+1. Rode `npm run test`
+2. Verifique que todos os testes passam
+3. Também é possível verificar o code coverage com `ng test --no-watch --code-coverage`
+
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/af84a7f4-1f3d-422d-b387-153c3c932ba5)
+
+# Explicando o Projeto
+
+## Tela de Resumo
+
+Essa tela:
+
+* Mostra o resumo das transações como Valor Total e Quantidade de Transações
+* Mostra insights gráficos das transações com oa principal forma de pagamento e a bandeira de cartão de crédito mais usada
+* Os gráficos são meramente estatísticos já que possuo uma pequena parte dos dados
+* Os items para a plotagem dos gráficos foram obtidos a partir de mapeamento automático das transações
+* Devido ao item acima, as cores são geradas aleatóriamente de acordo com a quantidade de items
+* Sempre que a tela de resumo é renderizada, há uma nova geração das cores. É interessante ver as cores mudando, lembra o site do [Composer](https://getcomposer.org/)
+
+![image](https://github.com/myckwilliam/transaction-dashboard/assets/75875219/1ea63d70-e886-4f65-9463-8b7c98039571)
+
+
+
+
+
 
 
 

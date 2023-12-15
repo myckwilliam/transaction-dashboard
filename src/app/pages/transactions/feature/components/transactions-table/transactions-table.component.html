@@ -27,9 +27,11 @@
     </ng-template>
     <ng-template pTemplate="body" let-transaction>
       <tr>
-        <td><span class="p-column-title">Id</span>{{ transaction.id }}</td>
         <td>
-          <span class="p-column-title">Bandeira</span
+          <span class="p-column-title font-bold">Id</span>{{ transaction.id }}
+        </td>
+        <td>
+          <span class="p-column-title font-bold">Bandeira</span
           ><img
             [src]="'assets/' + transaction.cardBrand + '.png'"
             [alt]="'Bandeira do Cartão' + transaction.cardBrand"
@@ -37,22 +39,22 @@
           />
         </td>
         <td>
-          <span class="p-column-title">Forma de Pagamento</span
+          <span class="p-column-title font-bold">Forma de Pagamento</span
           >{{ transaction.paymentType }}
         </td>
         <td>
-          <span class="p-column-title">Valor Bruto</span
+          <span class="p-column-title font-bold">Valor Bruto</span
           >{{ transaction.grossAmount }}
         </td>
         <td>
-          <span class="p-column-title">Status</span
+          <span class="p-column-title font-bold">Status</span
           ><p-tag
             [severity]="getSeverity(transaction.status)"
             [value]="transaction.status"
           ></p-tag>
         </td>
         <td>
-          <span class="p-column-title">Ação</span>
+          <span class="p-column-title font-bold">Ação</span>
           <button
             pButton
             pRipple

@@ -2,9 +2,9 @@
 
 Esse projeto foi feito com Angular 12 e PrimeNG para demonstrar minhas habilidades em Angular e também para aprender mais sobre esse maravilhoso ecossistema.
 
-O objetivo aqui foi criar telas acessíveis e responsívas para gerar valor analítico referente à transações por cartões de crédito. 
+O objetivo aqui foi criar telas acessíveis e responsivas para gerar valor analítico referente a transações por cartões de crédito. 
 
-Procurei usar em todo o projeto as melhores práticas em Angular quem venho estudando durante toda a minha carreira.
+Procurei usar em todo o projeto as melhores práticas em Angular que venho estudando durante toda a minha carreira.
 
 ## Como Usar
 
@@ -38,7 +38,7 @@ Essa tela:
 
 * Mostra o resumo das transações como Valor Total e Quantidade de Transações
 * É totalmente responsiva
-* Mostra insights gráficos das transações com oa principal forma de pagamento e a bandeira de cartão de crédito mais usada
+* Mostra insights gráficos das transações com a principal forma de pagamento e a bandeira de cartão de crédito mais usada
 * Os gráficos são meramente estatísticos já que possuo uma pequena parte dos dados
 * Os items para a plotagem dos gráficos foram obtidos a partir de mapeamento automático das transações
 * Devido ao item acima, as cores são geradas aleatóriamente de acordo com a quantidade de items

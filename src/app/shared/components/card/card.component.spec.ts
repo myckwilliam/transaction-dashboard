@@ -1,25 +1,35 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Component } from '@angular/core';
 import { CardComponent } from './card.component';
 
-describe('CardComponent', () => {
-  let component: CardComponent;
-  let fixture: ComponentFixture<CardComponent>;
+@Component({
+  template: `
+    <app-card>
+      <div id="test-content">Test Content</div>
+    </app-card>
+  `,
+})
+class TestHostComponent {}
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ CardComponent ]
-    })
-    .compileComponents();
-  });
+describe('CardComponent', () => {
+  let fixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardComponent);
-    component = fixture.componentInstance;
+    TestBed.configureTestingModule({
+      declarations: [CardComponent, TestHostComponent],
+    });
+
+    fixture = TestBed.createComponent(TestHostComponent);
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the component', () => {
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should render the provided content', () => {
+    const testContentElement: HTMLElement =
+      fixture.nativeElement.querySelector('#test-content');
+    expect(testContentElement.textContent).toContain('Test Content');
   });
 });

@@ -1,0 +1,68 @@
+<div style="max-height: 500px; overflow-y: auto">
+  <p-table
+    [value]="transactions"
+    responsiveLayout="stack"
+    class="p-datatable-responsive"
+  >
+    <ng-template pTemplate="caption">Transações</ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+        <th pSortableColumn="cardBrand">
+          Bandeira <p-sortIcon field="cardBrand"></p-sortIcon>
+        </th>
+        <th pSortableColumn="paymentType">
+          Forma de Pagamento <p-sortIcon field="paymentType"></p-sortIcon>
+        </th>
+        <th pSortableColumn="grossAmount">
+          Valor Bruto
+          <p-sortIcon field="grossAmount"></p-sortIcon>
+        </th>
+        <th pSortableColumn="status">
+          Status
+          <p-sortIcon field="status"></p-sortIcon>
+        </th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-transaction>
+      <tr>
+        <td><span class="p-column-title">Id</span>{{ transaction.id }}</td>
+        <td>
+          <span class="p-column-title">Bandeira</span
+          ><img
+            [src]="'assets/' + transaction.cardBrand + '.png'"
+            [alt]="'Bandeira do Cartão' + transaction.cardBrand"
+            style="max-width: 50px"
+          />
+        </td>
+        <td>
+          <span class="p-column-title">Forma de Pagamento</span
+          >{{ transaction.paymentType }}
+        </td>
+        <td>
+          <span class="p-column-title">Valor Bruto</span
+          >{{ transaction.grossAmount }}
+        </td>
+        <td>
+          <span class="p-column-title">Status</span
+          ><p-tag
+            [severity]="getSeverity(transaction.status)"
+            [value]="transaction.status"
+          ></p-tag>
+        </td>
+        <td>
+          <span class="p-column-title">Ação</span>
+          <button
+            pButton
+            pRipple
+            pTooltip="Ver detalhes"
+            aria-label="Detalhes da transação"
+            icon="pi pi-info-circle"
+            (click)="openDetailDialog(transaction)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
